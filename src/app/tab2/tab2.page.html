@@ -1,9 +1,40 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      List Books
     </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="goAdd()">
+        <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
-<ion-content></ion-content>
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing..."
+    >
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list *ngIf="books.length > 0; else showIfNoData">
+    <ion-item-sliding *ngFor="let book of books">
+      <ion-item (click)="goDetail(book)">
+        <ion-label>
+          <h2>{{book.title | titlecase}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end" (click)="delete(book)">
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ng-template #showIfNoData>
+    <p>Tidak ada data</p>
+  </ng-template>
+</ion-content>

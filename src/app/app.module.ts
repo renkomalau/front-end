@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookAddPage } from './book-add/book-add.page';
 
 @NgModule({
-  declarations: [AppComponent, BookAddpage],
+  declarations: [AppComponent, BookAddPage],
   entryComponents: [BookAddPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
   providers: [

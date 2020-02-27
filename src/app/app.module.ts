@@ -11,10 +11,11 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookAddPage } from './book-add/book-add.page';
 import { FormsModule } from '@angular/forms';
+import { UserAddPage } from './user-add/user-add.page';
 
 @NgModule({
-  declarations: [AppComponent, BookAddPage],
-  entryComponents: [BookAddPage],
+  declarations: [AppComponent, BookAddPage, UserAddPage],
+  entryComponents: [BookAddPage, UserAddPage],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,FormsModule],
   providers: [
     StatusBar,

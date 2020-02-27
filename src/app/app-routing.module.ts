@@ -17,6 +17,18 @@ const routes: Routes = [
   {
     path: 'book-edit/:id',
     loadChildren: () => import('./book-edit/book-edit.module').then( m => m.BookEditPageModule)
+  },
+  {
+    path: 'user-add',
+    loadChildren: () => import('./user-add/user-add.module').then( m => m.UserAddPageModule)
+  },
+  {
+    path: 'user-detail/:id',
+    loadChildren: () => import('./user-detail/user-detail.module').then( m => m.UserDetailPageModule)
+  },
+  {
+    path: 'user-edit/:id',
+    loadChildren: () => import('./user-edit/user-edit.module').then( m => m.UserEditPageModule)
   }
 ];
 @NgModule({

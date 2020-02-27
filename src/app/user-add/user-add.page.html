@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add New Users</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closePage()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Nama</ion-label>
+    <ion-input [(ngModel)]="user.nama" placeholder="Enter title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input type="email" [(ngModel)]="user.email" placeholder="Enter description"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="Password" [(ngModel)]="user.password" placeholder="Enter password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Images</ion-label>
+    <ion-input [(ngModel)]="user.images" placeholder="Enter images"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="submit()">SUBMIT</ion-button>
+</ion-content>
